@@ -1,0 +1,97 @@
+<h1 class="page-title">aldridge</h1>
+<!-- Menu -->
+<section class="menu-wrapper">
+  <ul class="menu">
+    <li class="menu-item"><a class="menu-link" [ngClass]="{ 'active': fragment == 'about' }" [routerLink]="'/'" fragment="about">about us</a></li>
+    <li class="menu-item"><a class="menu-link" [ngClass]="{ 'active': fragment == 'professionals' }" [routerLink]="'/'" fragment="professionals">professionals</a></li>
+    <li class="menu-item"><a class="menu-link" [ngClass]="{ 'active': fragment == 'patients' }" [routerLink]="'/'" fragment="patients">our patients</a></li>
+    <li class="menu-item"><a class="menu-link" [ngClass]="{ 'active': fragment == 'contact' }" [routerLink]="'/'" fragment="contact">contact</a></li>
+  </ul>
+</section>
+<!-- Hero Carousel -->
+<section class="carousel-wrapper">
+  <ul class="carousel">
+    <li *ngFor="let hero of heroImgs;let i = index"
+        class="carousel__item"
+        [ngClass]="{
+          'selected': i === selectedHeroIndex,
+          'back': i === (selectedHeroIndex + 2) % 4
+        }">
+      <div class="hero-text">
+        <div class="hero-inner-wrapper">
+          <span class="quote"><img src="./assets/img/quote.svg"></span>
+          <span class="text-body">in</span>
+          <span class="text-body">animal</span>
+          <span class="text-body">yawning</span>
+          <span class="text-body">human</span>
+          <span class="text-body">face.</span>
+          <span class="author">Karl Klaus</span>
+        </div>
+      </div>
+      <img class="carousel__img" [src]="'./assets/img/' + hero">
+    </li>
+  </ul>
+  <button class="carousel-btn --prev" type="button" (click)="onPrev()">
+    <img src="./assets/img/prev.svg">
+  </button>
+  <button class="carousel-btn --next" type="button" (click)="onNext()">
+    <img src="./assets/img/prev.svg">
+  </button>
+</section>
+<!-- About Us -->
+<section id="about" class="about-section">
+  <div class="about-us">
+    <h2 class="about-title">about us</h2>
+    <p class="about-detail">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+  </div>
+  <div class="about-column-wrapper">
+    <!-- Call a Physician -->
+    <div class="about-wrapper">
+      <h3 class="about__col-title">Call a Physician</h3>
+      <figure class="about-icon-wrapper">
+        <fa-icon class="about-icon"[icon]="['fas', 'briefcase-medical']"></fa-icon>
+      </figure>
+      <p class="about-body">
+        Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummyev since
+      </p>
+      <button class="about-btn">
+        <span class="about-btn__learn">learn more</span>
+        <fa-icon class="about-icon"[icon]="['fas', 'long-arrow-alt-right']"></fa-icon>
+      </button>
+    </div>
+    <!-- Qualified Specialists -->
+    <div class="about-wrapper">
+      <h3 class="about__col-title">Qualified Specialists</h3>
+      <figure class="about-icon-wrapper">
+        <fa-icon class="about-icon"[icon]="['fas', 'graduation-cap']"></fa-icon>
+      </figure>
+      <p class="about-body">
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC
+      </p>
+      <button class="about-btn">
+        <span class="about-btn__learn">learn more</span>
+        <fa-icon class="about-icon"[icon]="['fas', 'long-arrow-alt-right']"></fa-icon>
+      </button>
+    </div>
+    <!-- Quality Medicines -->
+    <div class="about-wrapper">
+      <h3 class="about__col-title">Quality Medicines</h3>
+      <figure class="about-icon-wrapper">
+        <fa-icon class="about-icon"[icon]="['fas', 'capsules']"></fa-icon>
+      </figure>
+      <p class="about-body">
+        There are many variations of passages of Lorem Ipsum available, but the have suffered alternation in some form, by injected
+      </p>
+      <button class="about-btn">
+        <span class="about-btn__learn">learn more</span>
+        <fa-icon class="about-icon"[icon]="['fas', 'long-arrow-alt-right']"></fa-icon>
+      </button>
+    </div>
+  </div>
+</section>
+<!-- Professionals -->
+<section id="professionals"></section>
+<!-- Patients -->
+<section id="patients"></section>
+<!-- Contact Us-->
+<section id="contact"></section>
