@@ -263,11 +263,156 @@
       width: 70%;
       color: #00BAFF;
       text-transform: uppercase;
+      outline: none;
       cursor: pointer;
       .about-btn__learn {
         margin-right: 5px;
         display: none;
       }
     }
+  }
+}
+/*** Patient Section ***/
+.patient-section {
+  display: flex;
+  margin: auto;
+  margin-top: 3rem;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  .patient--left {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    display: flex;
+  }
+  .patient--right {
+    flex: 2.5;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    .patient--top {
+      display: flex;
+      height: 50%;
+      flex: 1;
+    }
+    .patient--bottom {
+      display: flex;
+      height: 50%;
+      flex: 1;
+      width: 100%;
+    }
+    .col--3 {
+      flex: 2.5;
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+    .col--1 {
+      flex: 1;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+.name-tag {
+  text-align: left;
+  .name {
+    display: block;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .type {
+    color: #888;
+    font-weight: 800;
+  }
+}
+// gallery_lg
+.patient--left {
+  position: relative;
+  background: linear-gradient(to bottom, #EBECEE, #EDEEF0, #EFF0F2);
+  .name-tag {
+    position: absolute;
+    top: 10%;
+    left: calc(50% - 60px);
+  }
+  img {
+    width: 80%;
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+}
+// gallery_md1
+.patient--top .col--3{
+  position: relative;
+  background: radial-gradient(#E8E9E9, #F0F2F4 55%, #e5e7ea 80%);
+  .name-tag {
+    position: absolute;
+    right: 14%;
+    top: 45%;
+  }
+  img {
+    height: 60%;
+    margin-bottom: 5%;
+    margin-right: auto;
+    margin-left: 8%;
+    margin-top: auto;
+  }
+}
+// gallery_sm1
+.patient--top .col--1 {
+  display: flex;
+  position: relative;
+  background: radial-gradient(ellipse at center, #FFFFFF 20%, #EBECEE 100%);
+  .name-tag {
+    position: absolute;
+    left: 4%;
+    top: 20%;
+  }
+  img {
+    height: 80%;
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: 10%;
+  }
+}
+// gallery_sm2
+.patient--bottom .col--1 {
+  position: relative;
+  display: flex;
+  background: radial-gradient(#F5F5F3, #EFEFEF);
+  .name-tag {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+  }
+  img {
+    width: 80%;
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: 10%;
+  }
+}
+// gallery_md2
+.patient--bottom .col--3 {
+  position: relative;
+  display: flex;
+  background: linear-gradient(to top, #dcdcdc, #efefef, #FBFBFB);
+  .name-tag {
+    position: absolute;
+    top: 40%;
+    left: 16%;
+  }
+  img {
+    height: 90%;
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: 0;
+    margin-right: 10%;
   }
 }

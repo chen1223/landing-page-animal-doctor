@@ -28,14 +28,14 @@
           <span class="author">Karl Klaus</span>
         </div>
       </div>
-      <img class="carousel__img" [src]="'./assets/img/' + hero">
+      <img class="carousel__img" [src]="'./assets/img/' + hero" [alt]="'hero image' + i">
     </li>
   </ul>
   <button class="carousel-btn --prev" type="button" (click)="onPrev()">
-    <img src="./assets/img/prev.svg">
+    <img src="./assets/img/prev.svg" alt="next">
   </button>
   <button class="carousel-btn --next" type="button" (click)="onNext()">
-    <img src="./assets/img/prev.svg">
+    <img src="./assets/img/prev.svg" alt="next">
   </button>
 </section>
 <!-- About Us -->
@@ -88,10 +88,54 @@
       </button>
     </div>
   </div>
-</section>
-<!-- Professionals -->
-<section id="professionals"></section>
+</section><!-- End of About us -->
 <!-- Patients -->
-<section id="patients"></section>
+<section id="patients" class="patient-section">
+  <!-- Left Patient -->
+  <div class="patient--left">
+    <div class="name-tag">
+      <span class="name">Asher</span>
+      <span class="type">Golden Retriever</span>
+    </div>
+    <img class="patient-img--lg" src="./assets/img/gallery_lg.png" alt="Golden Retriever">
+  </div>
+  <!-- Right Patient -->
+  <div class="patient--right">
+    <div class="patient--top">
+      <div class="col--3">
+        <div class="name-tag">
+          <span class="name">Luke</span>
+          <span class="type">Shar Pei</span>
+        </div>
+        <img class="patient-img--lg" src="./assets/img/gallery_md1.png" alt="Shar Pei">
+      </div>
+      <div class="col--1">
+        <div class="name-tag">
+          <span class="name">Mitch</span>
+          <span class="type">Bulldog</span>
+        </div>
+        <img class="patient-img--lg" src="./assets/img/gallery_sm1.png" alt="Bulldog">
+      </div>
+    </div>
+    <div class="patient--bottom">
+      <div class="col--1">
+        <div class="name-tag">
+          <span class="name">Otis</span>
+          <span class="type">Corgi</span>
+        </div>
+        <img class="patient-img--lg" src="./assets/img/gallery_sm2.png" alt="Corgi">
+      </div>
+      <div class="col--3">
+        <div class="name-tag">
+          <span class="name">Barney</span>
+          <span class="type">Labrador</span>
+        </div>
+        <img class="patient-img--lg" src="./assets/img/gallery_md2.png" alt="Labrador">
+      </div>
+    </div>
+  </div>
+</section><!-- End of Patients -->
+<!-- Professionals -->
+<section id="professionals"></section><!-- End of Professionals -->
 <!-- Contact Us-->
-<section id="contact"></section>
+<section id="contact"></section><!-- End of Contact Us -->
