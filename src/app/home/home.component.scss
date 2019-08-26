@@ -185,15 +185,17 @@
   margin-top: 3rem;
   text-align: center;
 }
+.section-title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 20px auto;
+  text-align: center;
+  color: #333;
+}
 .about-us {
   color: #333;
   width: 65%;
   margin: auto;
-  .about-title {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 0;
-  }
   .about-detail {
     font-size: 14px;
     margin: 0;
@@ -274,9 +276,12 @@
 }
 /*** Patient Section ***/
 .patient-section {
+  margin-top: 10rem;
+}
+.patient-wrapper {
   display: flex;
   margin: auto;
-  margin-top: 3rem;
+  margin-top: 40px;
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
