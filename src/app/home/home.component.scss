@@ -38,6 +38,23 @@
   }
 }
 /*** Hero Carousel ***/
+.carousel-btn {
+  background: none;
+  border: none;
+  width: 60px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1000;
+  bottom: 45%;
+  outline: none;
+  &.--prev {
+    left: 10%;
+  }
+  &.--next {
+    right: 10%;
+    transform: rotate(180deg) translateY(3px);
+  }
+}
 .carousel-wrapper {
   height: 100vh;
   overflow: hidden;
@@ -96,23 +113,6 @@
     max-height: 90%;
     transform-style: preserve-3d;
     transition: transform 1s;
-  }
-  .carousel-btn {
-    background: none;
-    border: none;
-    width: 60px;
-    cursor: pointer;
-    position: absolute;
-    z-index: 1000;
-    bottom: 45%;
-    outline: none;
-    &.--prev {
-      left: 10%;
-    }
-    &.--next {
-      right: 10%;
-      transform: rotate(180deg) translateY(3px);
-    }
   }
 }
 .hero-text {
@@ -326,7 +326,7 @@
   .name {
     display: block;
     color: #333;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 800;
     margin-bottom: 6px;
   }
@@ -420,4 +420,153 @@
     margin-bottom: 0;
     margin-right: 10%;
   }
+}
+/*** Professional Section ***/
+.professional-section {
+  margin-top: 8rem;
+  .profile-wrapper {
+    width: 100%;
+    position: relative;
+    .carousel-btn {
+      bottom: 60%;
+    }
+    .carousel-btn.--prev {
+      left: 7%;
+    }
+    .carousel-btn.--next {
+      right: 7%;
+    }
+  }
+  .profile-inner-wrapper {
+    width: 80%;
+    margin: auto;
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .slider-wrapper {
+    width: 100%;
+    // transform: translateX(-20%);
+    transition: transform .5s ease-in-out;
+  }
+}
+.profile-slider {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 300px;
+  margin: auto;
+  width: 500%;
+  transition: transform .5s ease-in-out;
+  .profile {
+    width: calc(4% - 40px);
+    margin: 0 20px;
+    display: inline-block;
+  }
+}
+.profile {
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  transition: transform .5s ease-in-out;
+  .main-content {
+    width: 100%;
+    height: 100%;
+  }
+  .avatar-wrapper {
+    width: 100%;
+    position: relative;
+    margin: auto;
+    border-radius: 100%;
+    border: 2px solid #dedede;
+    background: white;
+    overflow: hidden;
+    display: flex;
+    box-sizing: border-box;
+    &:hover {
+      .hidden-content {
+        transform: translateY(0%);
+      }
+    }
+    img {
+      width: 97%;
+      max-width: 97%;
+      border-radius: 100%;
+      margin: auto;
+    }
+  }
+  .detail-wrapper {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    .name {
+      text-transform: uppercase;
+      font-size: 16px;
+      color: #333;
+    }
+    .title {
+      margin-top: 5px;
+      color: #888;
+      font-weight: lighter;
+      font-size: 14px;
+      font-style: italic;
+    }
+  }
+  .hidden-content {
+    background: rgba(0, 168, 255, .5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 100%;
+    display: flex;
+    transform: translateY(100%);
+    transition: transform .45s;
+  }
+  .hidden-wrapper {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    .patient {
+      font-size: 2.8rem;
+    }
+    .patient-unit {
+      font-size: 18px;
+      font-style: italic;
+    }
+    .patient-more {
+      border: transparent;
+      border-right: 2px solid white;
+      border-bottom: 2px solid white;
+      width: 10px;
+      height: 14px;
+      background: transparent;
+      transform: rotate(45deg);
+      margin: auto;
+      margin-top: 5px;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+}
+.profile:nth-child(1) {
+  transform: translate3d(0, 0, 0);
+}
+.profile:nth-child(2) {
+  transform: translate3d(120%, 0, 0);
+}
+.profile:nth-child(3) {
+  transform: translate3d(240%, 0, 0);
+}
+.profile:nth-child(4) {
+  transform: translate3d(360%, 0, 0);
+}
+.profile:nth-child(5) {
+  transform: translate3d(480%, 0, 0);
 }

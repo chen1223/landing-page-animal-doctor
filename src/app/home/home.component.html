@@ -31,10 +31,10 @@
       <img class="carousel__img" [src]="'./assets/img/' + hero" [alt]="'hero image' + i">
     </li>
   </ul>
-  <button class="carousel-btn --prev" type="button" (click)="onPrev()">
-    <img src="./assets/img/prev.svg" alt="next">
+  <button class="carousel-btn --prev" type="button" aria-label="previous hero image" (click)="onPrev()">
+    <img src="./assets/img/prev.svg" alt="previous">
   </button>
-  <button class="carousel-btn --next" type="button" (click)="onNext()">
+  <button class="carousel-btn --next" type="button" aria-label="next hero image" (click)="onNext()">
     <img src="./assets/img/prev.svg" alt="next">
   </button>
 </section>
@@ -139,6 +139,42 @@
   </div>
 </section><!-- End of Patients -->
 <!-- Professionals -->
-<section id="professionals"></section><!-- End of Professionals -->
+<section id="professionals" class="professional-section">
+  <h2 class="section-title">our professionals</h2>
+  <div class="profile-wrapper">
+    <div class="profile-inner-wrapper">
+      <div class="slider-wrapper">
+        <ul class="profile-slider">
+          <li class="profile" *ngFor="let profile of profileList; let i = index" [@profList]="profile.state">
+            <!-- Main profile content -->
+            <div class="main-content">
+              <div class="avatar-wrapper" [ngStyle]="">
+                <img [src]="'./assets/img/' + profile['img']" [alt]="profile['name']">
+                <!-- Hidden profile content -->
+                <div class="hidden-content">
+                  <div class="hidden-wrapper">
+                    <span class="patient">{{ profile['patients'] }}</span>
+                    <span class="patient-unit">patients</span>
+                    <button class="patient-more" type="button" aria-label="more"></button>
+                  </div>
+                </div><!-- End of hidden profile content -->
+              </div>
+              <div class="detail-wrapper">
+                <span class="name">{{ profile['name'] }}</span>
+                <span class="title">{{ profile['title'] }}</span>
+              </div>
+            </div><!-- End of main profile content -->
+          </li>
+        </ul>
+      </div>
+    </div>
+    <button (click)="onPrevProf()" class="carousel-btn --prev" type="button" aria-label="previous professional">
+      <img src="./assets/img/prev.svg" alt="previous">
+    </button>
+    <button (click)="onNextProf()" class="carousel-btn --next" type="button" aria-label="next professional">
+      <img src="./assets/img/prev.svg" alt="next">
+    </button>
+  </div>
+</section><!-- End of Professionals -->
 <!-- Contact Us-->
 <section id="contact"></section><!-- End of Contact Us -->

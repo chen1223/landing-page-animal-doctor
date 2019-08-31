@@ -1,12 +1,57 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { trigger, style, transition, state, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  animations: [
+    trigger('profList', [
+      state('enterRight', style({
+        opacity: 1,
+      })),
+      state('enterLeft', style({
+        opacity: 1,
+      })),
+      state('exitRight', style({
+        opacity: 0,
+        transform: 'translateX(0)'
+      })),
+      state('exitLeft', style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      })),
+      transition('void => enterRight', [
+        style({
+          opacity: 0,
+          transform: 'translateX(100%)'
+        }),
+        animate(450)
+      ]),
+      transition('void => enterLeft', [
+        style({
+          opacity: 0,
+          transform: 'translateX(-100%)'
+        }),
+        animate(450)
+      ]),
+      transition('exitLeft => void', [
+        animate(450, style({
+          opacity: 0,
+          transform: 'translateX(-100%)'
+        }))
+      ]),
+      transition('exitRight => void', [
+        animate(450, style({
+          opacity: 0,
+          transform: 'translateX(-100%)'
+        }))
+      ])
+    ])
+  ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
 
   // Hero images
   heroImgs: string[] = ['hero1.png', 'hero2.png', 'hero3.png', 'hero4.png'];
@@ -15,9 +60,6 @@ export class HomeComponent implements OnInit {
   lgGallery: string[] = ['gallery_lg.png'];
   mdGallery: string[] = ['gallery_md1.png', 'gallery_md1.png'];
   smGallery: string[] = ['gallery_sm1.png', 'gallery_sm2.png'];
-
-  // Professional images
-  profileImgs: string[] = ['profile1.jpg', 'profile2.jpg', 'profile3.jpg', 'profile4.jpg', 'profile5.jpg'];
 
   // Determine of current section scrolled into
   fragment: string = '';
@@ -28,6 +70,49 @@ export class HomeComponent implements OnInit {
   currDeg: number = 0;
   rotationUnit: number = 90;
 
+  /**
+   * Professionals related variables
+   */
+  profActiveIndex = 4;
+  profPosition: number = -20;
+  profileList: Object[] = [
+    {
+      img: 'profile1.jpg',
+      name: 'Julia Johnson',
+      title: 'surgeon',
+      patients: 15,
+      state: 'enterRight'
+    },
+    {
+      img: 'profile2.jpg',
+      name: 'Andrew Huang',
+      title: 'dentist',
+      patients: 25,
+      state: 'enterRight'
+    },
+    {
+      img: 'profile3.jpg',
+      name: 'Ellen Bennett',
+      title: 'therapist',
+      patients: 22,
+      state: 'enterRight'
+    },
+    {
+      img: 'profile4.jpg',
+      name: 'Cameron Brown',
+      title: 'traumatologist',
+      patients: 38,
+      state: 'enterRight'
+    },
+    {
+      img: 'profile5.jpg',
+      name: 'Samantha Lamar',
+      title: 'consultant',
+      patients: 42,
+      state: 'enterRight'
+    }
+  ];
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -35,6 +120,12 @@ export class HomeComponent implements OnInit {
       this.fragment = fragment;
       this.scrollToView(fragment);
     });
+    // this.setUpProfList();
+  }
+
+  ngAfterViewInit() {
+    // Render professional avatars
+    this.renderAvatar();
   }
 
   scrollToView(target): void {
@@ -90,5 +181,41 @@ export class HomeComponent implements OnInit {
           break;
       }
     });
+  }
+
+  /**
+   * Professionals related functions
+   */
+  // Set up professional list
+  setUpProfList(): void {
+    while (this.profileList.length <= 5) {
+      this.profileList.push(...this.profileList);
+    }
+  }
+  // Render W : H (1 : 1) based on current width
+  renderAvatar(): void {
+    const avatars = document.querySelectorAll('.avatar-wrapper');
+    Array.from(avatars).forEach(avatar => {
+      const width = (<HTMLDivElement> avatar).clientWidth;
+      (<HTMLDivElement> avatar).style.height = `${width}px`;
+    });
+  }
+  // On user click on next on professional slider
+  onNextProf(): void {
+    this.profileList[0]['state'] = 'exitLeft';
+    let profile = this.profileList.shift();
+    setTimeout(() => {
+      profile['state'] = 'enterRight';
+      this.profileList.push(profile);
+    }, 50);
+  }
+  // On user click on previous on professional slider
+  onPrevProf(): void {
+    this.profileList[this.profileList.length - 1]['state'] = 'exitRight';
+    let profile = this.profileList.pop();
+    setTimeout(() => {
+      profile['state'] = 'enterLeft';
+      this.profileList.splice(0, 0, profile);
+    }, 50);
   }
 }
