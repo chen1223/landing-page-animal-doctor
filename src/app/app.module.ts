@@ -10,6 +10,9 @@ import { faLongArrowAltRight,
          faBriefcaseMedical,
          faGraduationCap,
          faCapsules } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookF,
+         faGithubAlt,
+         faPinterestP } from '@fortawesome/free-brands-svg-icons';
 
 @NgModule({
   declarations: [
@@ -27,9 +30,9 @@ import { faLongArrowAltRight,
 })
 export class AppModule {
   constructor() {
-    library.add(faLongArrowAltRight);
-    library.add(faBriefcaseMedical);
-    library.add(faGraduationCap);
-    library.add(faCapsules);
+    [faLongArrowAltRight, faBriefcaseMedical, faGraduationCap,
+     faCapsules, faFacebookF, faGithubAlt, faPinterestP].forEach(icon => {
+      library.add(icon);
+    });
   }
 }

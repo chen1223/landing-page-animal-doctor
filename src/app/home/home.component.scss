@@ -276,7 +276,7 @@
 }
 /*** Patient Section ***/
 .patient-section {
-  margin-top: 10rem;
+  margin-top: 8rem;
 }
 .patient-wrapper {
   display: grid;
@@ -535,4 +535,120 @@
 }
 .profile:nth-child(5) {
   transform: translate3d(480%, 0, 0);
+}
+/*** Contact Section ***/
+.contact-section {
+  margin-top: 3rem;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  .contact-wrapper {
+    grid-column: 2/6;
+    grid-row: 1/last-line;
+    display: flex;
+  }
+  .contact-bg {
+    grid-column: 3/last-line;
+    grid-row: 1/last-line;
+    display: flex;
+    img {
+      margin: auto;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      z-index: -1;
+    }
+  }
+}
+.contact-wrapper .contact-box {
+  margin: auto;
+  width: 90%;
+  height: 75%;
+  color: white;
+  background: rgba(0, 168, 255, .8);
+  border-radius: 5px;
+  padding: 30px 40px;
+  box-sizing: border-box;
+  text-align: center;
+  .title {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    display: block;
+    margin: 30px 0;
+  }
+  .contact-row {
+    margin: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+    .contact-ctrl {
+      width: 100%;
+      font-size: 1.1rem;
+      padding: 10px 15px;
+      box-sizing: border-box;
+      background: transparent;
+      border: 1px solid white;
+      border-radius: 5px;
+      color: white;
+    }
+    .contact-ctrl::placeholder {
+      color: white;
+      font-style: italic;
+      font-size: .95rem;
+      font-weight: lighter;
+    }
+  }
+  .contact-submit {
+    text-transform: uppercase;
+    background: white;
+    border: none;
+    width: 170px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+    margin-top: 15px;
+    color: rgba(0, 168, 255, .8);
+    letter-spacing: 1px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    &:active {
+      transform: scale(.95);
+    }
+  }
+}
+/*** Social Section ***/
+.social-section {
+  margin: 3rem 0;
+}
+.social-wrapper {
+  display: flex;
+  width: 13%;
+  margin: 30px auto;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.social-link {
+  flex: 1;
+  box-sizing: border-box;
+}
+.social-icon-wrapper {
+  width: 30px;
+  height: 30px;
+  background: #333;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .9rem;
+  margin: auto;
+}
+.credit {
+  font-size: .8rem;
+  margin: auto;
+  margin-top: 15px;
+  outline: none;
+  color: #333;
 }
