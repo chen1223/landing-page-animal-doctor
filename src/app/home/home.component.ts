@@ -15,8 +15,8 @@ import { trigger, style, transition, state, animate } from '@angular/animations'
         opacity: 1,
       })),
       state('exitRight', style({
-        opacity: 0,
-        transform: 'translateX(0)'
+        opacity: 1,
+        transform: 'translateX(480%)'
       })),
       state('exitLeft', style({
         opacity: 1,
@@ -25,27 +25,27 @@ import { trigger, style, transition, state, animate } from '@angular/animations'
       transition('void => enterRight', [
         style({
           opacity: 0,
-          transform: 'translateX(100%)'
+          transform: 'translateX(600%)'
         }),
-        animate(450)
+        animate('0.45s ease-out')
       ]),
       transition('void => enterLeft', [
         style({
           opacity: 0,
           transform: 'translateX(-100%)'
         }),
-        animate(450)
+        animate('0.45s ease-out')
       ]),
       transition('exitLeft => void', [
-        animate(450, style({
+        animate('0.45s ease-in', style({
           opacity: 0,
           transform: 'translateX(-100%)'
         }))
       ]),
       transition('exitRight => void', [
-        animate(450, style({
+        animate('0.45s ease-in', style({
           opacity: 0,
-          transform: 'translateX(-100%)'
+          transform: 'translateX(-600%)'
         }))
       ])
     ])
@@ -207,7 +207,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       profile['state'] = 'enterRight';
       this.profileList.push(profile);
-    }, 50);
+    }, 150);
   }
   // On user click on previous on professional slider
   onPrevProf(): void {
