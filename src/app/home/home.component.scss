@@ -467,11 +467,13 @@
     position: relative;
     margin: auto;
     border-radius: 100%;
-    border: 2px solid #dedede;
     background: white;
     overflow: hidden;
     display: flex;
     box-sizing: border-box;
+    &.shown {
+      border: 2px solid #dedede;
+    }
     &:hover,
     &:active {
       .hidden-content {

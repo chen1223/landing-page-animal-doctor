@@ -205,6 +205,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     Array.from(avatars).forEach(avatar => {
       const width = (<HTMLDivElement> avatar).clientWidth;
       (<HTMLDivElement> avatar).style.height = `${width}px`;
+      avatar.classList.add('shown');
     });
   }
   // On user click on next on professional slider

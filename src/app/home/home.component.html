@@ -140,7 +140,7 @@
             <li class="profile" *ngFor="let profile of profileList; let i = index" [@profList]="profile.state">
               <!-- Main profile content -->
               <div class="main-content">
-                <div class="avatar-wrapper" [ngStyle]="">
+                <div class="avatar-wrapper">
                   <img [src]="'./assets/img/' + profile['img']" [alt]="profile['name']">
                   <!-- Hidden profile content -->
                   <div class="hidden-content">
