@@ -7,9 +7,9 @@ This is an Angular based landing page demo designed by [Christina Vlastiuk](http
 
 ## Tech Stacks
 
-| Field                | Technology using                 |
-| :------------------- | :------------------------------- |
-| Frontend Techonology | Angular 7                        |
+| Field               | Technology using                 |
+| :------------------ | :------------------------------- |
+| Frontend Technology | Angular 7                        |
 
 ## Website Features
 
