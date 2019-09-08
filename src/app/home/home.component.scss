@@ -310,6 +310,9 @@
     grid-column: 1/4;
     grid-row: 1/last-line;
     background: linear-gradient(to bottom, #EBECEE, #EDEEF0, #EFF0F2);
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
     img {
       margin-top: auto;
       margin-bottom: 0;
@@ -323,6 +326,9 @@
     grid-column: 4/9;
     grid-row: 1/4;
     background: radial-gradient(#E8E9E9, #F0F2F4 55%, #e5e7ea 80%);
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
     img {
       height: 65%;
       max-height: 65%;
@@ -338,6 +344,9 @@
     grid-column: 9/12;
     grid-row: 1/4;
     background: radial-gradient(ellipse at center, #FFFFFF 20%, #EBECEE 100%);
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
     img {
       height: 95%;
       max-height: 95%;
@@ -352,6 +361,9 @@
     grid-column: 4/7;
     grid-row: 4/last-line;
     background: radial-gradient(#F5F5F3, #EFEFEF);
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
     img {
       height: 95%;
       max-height: 95%;
@@ -366,6 +378,9 @@
     grid-column: 7/12;
     grid-row: 4/last-line;
     background: linear-gradient(to top, #dcdcdc, #efefef, #FBFBFB);
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
     img {
       width: 75%;
       max-width: 75%;
