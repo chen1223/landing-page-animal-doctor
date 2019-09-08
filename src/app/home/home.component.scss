@@ -668,7 +668,13 @@
 /*--------- Landscape Devices ---------*/
 /***** LG Devices *****/
 @media (min-width: 1200px) and (orientation: landscape){
-
+  /*** Hero Section ***/
+  .carousel-wrapper {
+    margin-top: 5rem;
+    .carousel {
+      margin-top: 8rem;
+    }
+  }
 }
 /***** MD Devices*****/
 @media (min-width: 993px) and (max-width: 1199px) and (orientation: landscape){
