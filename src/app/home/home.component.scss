@@ -696,6 +696,11 @@
       max-height: 85%;
     }
   }
+  .hero-text {
+    .hero-inner-wrapper {
+      width: 48%;
+    }
+  }
 }
 /***** MD Devices*****/
 @media (min-width: 993px) and (max-width: 1199px) and (orientation: landscape){
