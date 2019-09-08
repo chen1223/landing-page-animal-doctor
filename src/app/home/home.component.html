@@ -141,7 +141,7 @@
               <!-- Main profile content -->
               <div class="main-content">
                 <div class="avatar-wrapper">
-                  <img [src]="'./assets/img/' + profile['img']" [alt]="profile['name']">
+                  <img [src]="'./assets/img/' + profile['img']" [alt]="profile['name']" (load)="renderAvatar()">
                   <!-- Hidden profile content -->
                   <div class="hidden-content">
                     <div class="hidden-wrapper">

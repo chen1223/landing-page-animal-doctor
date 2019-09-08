@@ -51,7 +51,7 @@ import { trigger, style, transition, state, animate } from '@angular/animations'
     ])
   ]
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
 
   // Hero images
   heroImgs: string[] = ['hero1.png', 'hero2.png', 'hero3.png', 'hero4.png'];
@@ -120,11 +120,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.fragment = fragment;
       this.scrollToView(fragment);
     });
-  }
-
-  ngAfterViewInit() {
-    // Render professional avatars
-    this.renderAvatar();
   }
 
   scrollToView(target): void {
