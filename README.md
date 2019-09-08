@@ -1,27 +1,25 @@
-# AnimalDoctor
+# Landing Page - Animal Doctor
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+[Live Demo](https://chen1223.github.io/landing-page-animal-doctor/)
 
-## Development server
+## About
+This is an Angular based landing page demo designed by [Christina Vlastiuk](https://www.behance.net/tinavia) from Behance. The purpose of this project is to build an astounding website following a designer's design plan and to achieve animations shown on the design using CSS only and without help from any existing libraries.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Tech Stacks
 
-## Code scaffolding
+| Field                | Technology using                 |
+| :------------------- | :------------------------------- |
+| Frontend Techonology | Angular 7                        |
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Website Features
 
-## Build
+* 3D Carousel
+* Smooth scroll across the entire page
+* Collage style layout using CSS Grid
+* Endless slider
+* Contact form
+* Links to other social platforms
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Credit
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+[Original design](https://www.behance.net/gallery/29757805/Landing-page-Aldridge) by __Christina Vlastiuk__
