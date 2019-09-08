@@ -1,211 +1,213 @@
-<h1 class="page-title">aldridge</h1>
-<!-- Menu -->
-<section class="menu-wrapper">
-  <ul class="menu">
-    <li class="menu-item"><a class="menu-link" [ngClass]="{ 'active': fragment == 'about' }" [routerLink]="'/'" fragment="about">about us</a></li>
-    <li class="menu-item"><a class="menu-link" [ngClass]="{ 'active': fragment == 'professionals' }" [routerLink]="'/'" fragment="professionals">professionals</a></li>
-    <li class="menu-item"><a class="menu-link" [ngClass]="{ 'active': fragment == 'patients' }" [routerLink]="'/'" fragment="patients">our patients</a></li>
-    <li class="menu-item"><a class="menu-link" [ngClass]="{ 'active': fragment == 'contact' }" [routerLink]="'/'" fragment="contact">contact</a></li>
-  </ul>
-</section>
-<!-- Hero Carousel -->
-<section class="carousel-wrapper">
-  <ul class="carousel">
-    <li *ngFor="let hero of heroImgs;let i = index"
-        class="carousel__item"
-        [ngClass]="{
-          'selected': i === selectedHeroIndex,
-          'back': i === (selectedHeroIndex + 2) % 4
-        }">
-      <div class="hero-text">
-        <div class="hero-inner-wrapper">
-          <span class="quote"><img src="./assets/img/quote.svg"></span>
-          <span class="text-body">in</span>
-          <span class="text-body">animal</span>
-          <span class="text-body">yawning</span>
-          <span class="text-body">human</span>
-          <span class="text-body">face.</span>
-          <span class="author">Karl Klaus</span>
+<div class="body-wrapper" (window:resize)="onResize()">
+  <h1 class="page-title">aldridge</h1>
+  <!-- Menu -->
+  <section class="menu-wrapper">
+    <ul class="menu">
+      <li class="menu-item"><a class="menu-link" [ngClass]="{ 'active': fragment == 'about' }" [routerLink]="'/'" fragment="about">about us</a></li>
+      <li class="menu-item"><a class="menu-link" [ngClass]="{ 'active': fragment == 'professionals' }" [routerLink]="'/'" fragment="professionals">professionals</a></li>
+      <li class="menu-item"><a class="menu-link" [ngClass]="{ 'active': fragment == 'patients' }" [routerLink]="'/'" fragment="patients">our patients</a></li>
+      <li class="menu-item"><a class="menu-link" [ngClass]="{ 'active': fragment == 'contact' }" [routerLink]="'/'" fragment="contact">contact</a></li>
+    </ul>
+  </section>
+  <!-- Hero Carousel -->
+  <section class="carousel-wrapper">
+    <ul class="carousel">
+      <li *ngFor="let hero of heroImgs;let i = index"
+          class="carousel__item"
+          [ngClass]="{
+            'selected': i === selectedHeroIndex,
+            'back': i === (selectedHeroIndex + 2) % 4
+          }">
+        <div class="hero-text">
+          <div class="hero-inner-wrapper">
+            <span class="quote"><img src="./assets/img/quote.svg"></span>
+            <span class="text-body">in</span>
+            <span class="text-body">animal</span>
+            <span class="text-body">yawning</span>
+            <span class="text-body">human</span>
+            <span class="text-body">face.</span>
+            <span class="author">Karl Klaus</span>
+          </div>
         </div>
-      </div>
-      <img class="carousel__img" [src]="'./assets/img/' + hero" [alt]="'hero image' + i">
-    </li>
-  </ul>
-  <button class="carousel-btn --prev" type="button" aria-label="previous hero image" (click)="onPrev()">
-    <img src="./assets/img/prev.svg" alt="previous">
-  </button>
-  <button class="carousel-btn --next" type="button" aria-label="next hero image" (click)="onNext()">
-    <img src="./assets/img/prev.svg" alt="next">
-  </button>
-</section>
-<!-- About Us -->
-<section id="about" class="about-section">
-  <div class="about-us">
-    <h2 class="section-title">about us</h2>
-    <p class="about-detail">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-  </div>
-  <div class="about-column-wrapper">
-    <!-- Call a Physician -->
-    <div class="about-wrapper">
-      <h3 class="about__col-title">Call a Physician</h3>
-      <figure class="about-icon-wrapper">
-        <fa-icon class="about-icon"[icon]="['fas', 'briefcase-medical']"></fa-icon>
-      </figure>
-      <p class="about-body">
-        Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummyev since
-      </p>
-      <button class="about-btn">
-        <span class="about-btn__learn">learn more</span>
-        <fa-icon class="about-icon"[icon]="['fas', 'long-arrow-alt-right']"></fa-icon>
-      </button>
-    </div>
-    <!-- Qualified Specialists -->
-    <div class="about-wrapper">
-      <h3 class="about__col-title">Qualified Specialists</h3>
-      <figure class="about-icon-wrapper">
-        <fa-icon class="about-icon"[icon]="['fas', 'graduation-cap']"></fa-icon>
-      </figure>
-      <p class="about-body">
-        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC
-      </p>
-      <button class="about-btn">
-        <span class="about-btn__learn">learn more</span>
-        <fa-icon class="about-icon"[icon]="['fas', 'long-arrow-alt-right']"></fa-icon>
-      </button>
-    </div>
-    <!-- Quality Medicines -->
-    <div class="about-wrapper">
-      <h3 class="about__col-title">Quality Medicines</h3>
-      <figure class="about-icon-wrapper">
-        <fa-icon class="about-icon"[icon]="['fas', 'capsules']"></fa-icon>
-      </figure>
-      <p class="about-body">
-        There are many variations of passages of Lorem Ipsum available, but the have suffered alternation in some form, by injected
-      </p>
-      <button class="about-btn">
-        <span class="about-btn__learn">learn more</span>
-        <fa-icon class="about-icon"[icon]="['fas', 'long-arrow-alt-right']"></fa-icon>
-      </button>
-    </div>
-  </div>
-</section><!-- End of About us -->
-<!-- Patients -->
-<section id="patients" class="patient-section">
-  <h2 class="section-title">our patients</h2>
-  <div class="patient-wrapper">
-    <div class="patient-1">
-      <div class="name-tag">
-        <span class="name">Asher</span>
-        <span class="type">Golden Retriever</span>
-      </div>
-      <img class="patient-img--lg" src="./assets/img/gallery_lg.png" alt="Golden Retriever">
-    </div>
-    <div class="patient-2">
-      <div class="name-tag">
-        <span class="name">Luke</span>
-        <span class="type">Shar Pei</span>
-      </div>
-      <img class="patient-img--lg" src="./assets/img/gallery_md1.png" alt="Shar Pei">
-    </div>
-    <div class="patient-3">
-      <div class="name-tag">
-        <span class="name">Mitch</span>
-        <span class="type">Bulldog</span>
-      </div>
-      <img class="patient-img--lg" src="./assets/img/gallery_sm1.png" alt="Bulldog">
-    </div><div class="patient-4">
-      <div class="name-tag">
-        <span class="name">Otis</span>
-        <span class="type">Corgi</span>
-      </div>
-      <img class="patient-img--lg" src="./assets/img/gallery_sm2.png" alt="Corgi">
-    </div>
-    <div class="patient-5">
-      <div class="name-tag">
-        <span class="name">Barney</span>
-        <span class="type">Labrador</span>
-      </div>
-      <img class="patient-img--lg" src="./assets/img/gallery_md2.png" alt="Labrador">
-    </div>
-  </div>
-</section><!-- End of Patients -->
-<!-- Professionals -->
-<section id="professionals" class="professional-section">
-  <h2 class="section-title">our professionals</h2>
-  <div class="profile-wrapper">
-    <div class="profile-inner-wrapper">
-      <div class="slider-wrapper">
-        <ul class="profile-slider">
-          <li class="profile" *ngFor="let profile of profileList; let i = index" [@profList]="profile.state">
-            <!-- Main profile content -->
-            <div class="main-content">
-              <div class="avatar-wrapper" [ngStyle]="">
-                <img [src]="'./assets/img/' + profile['img']" [alt]="profile['name']">
-                <!-- Hidden profile content -->
-                <div class="hidden-content">
-                  <div class="hidden-wrapper">
-                    <span class="patient">{{ profile['patients'] }}</span>
-                    <span class="patient-unit">patients</span>
-                    <button class="patient-more" type="button" aria-label="more"></button>
-                  </div>
-                </div><!-- End of hidden profile content -->
-              </div>
-              <div class="detail-wrapper">
-                <span class="name">{{ profile['name'] }}</span>
-                <span class="title">{{ profile['title'] }}</span>
-              </div>
-            </div><!-- End of main profile content -->
-          </li>
-        </ul>
-      </div>
-    </div>
-    <button (click)="onPrevProf()" class="carousel-btn --prev" type="button" aria-label="previous professional">
+        <img class="carousel__img" [src]="'./assets/img/' + hero" [alt]="'hero image' + i">
+      </li>
+    </ul>
+    <button class="carousel-btn --prev" type="button" aria-label="previous hero image" (click)="onPrev()">
       <img src="./assets/img/prev.svg" alt="previous">
     </button>
-    <button (click)="onNextProf()" class="carousel-btn --next" type="button" aria-label="next professional">
+    <button class="carousel-btn --next" type="button" aria-label="next hero image" (click)="onNext()">
       <img src="./assets/img/prev.svg" alt="next">
     </button>
-  </div>
-</section><!-- End of Professionals -->
-<!-- Contact Us-->
-<section id="contact" class="contact-section">
-  <div class="contact-wrapper">
-    <div class="contact-box">
-      <span class="title">contact</span>
-      <div class="contact-row">
-        <input class="contact-ctrl" placeholder="Name" type="text">
-      </div>
-      <div class="contact-row">
-        <input class="contact-ctrl" placeholder="E-mail" type="email">
-      </div>
-      <div class="contact-row">
-        <textarea class="contact-ctrl" placeholder="Message" rows="4"></textarea>
-      </div>
-      <button type="button" class="contact-submit">submit</button>
+  </section>
+  <!-- About Us -->
+  <section id="about" class="about-section">
+    <div class="about-us">
+      <h2 class="section-title">about us</h2>
+      <p class="about-detail">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book took a gallery of type.</p>
     </div>
-  </div>
-  <div class="contact-bg">
-    <img src="./assets/img/dog_btm.png" alt="dog">
-  </div>
-</section><!-- End of Contact Us -->
-<!-- Social Section -->
-<section class="social-section">
-  <div class="social-wrapper">
-    <a class="social-link" target="_blank" href="https://github.com/chen1223">
-      <figure class="social-icon-wrapper">
-        <fa-icon class="social-icon"[icon]="['fab', 'github-alt']"></fa-icon>
-      </figure>
-    </a>
-    <a class="social-link" target="_blank" href="https://codepen.io/chen1223">
-      <figure class="social-icon-wrapper">
-        <fa-icon class="social-icon"[icon]="['fab', 'codepen']"></fa-icon>
-      </figure>
-    </a>
-    <a class="social-link" target="_blank" href="https://www.linkedin.com/in/han-wei-chen">
-      <figure class="social-icon-wrapper">
-        <fa-icon class="social-icon"[icon]="['fab', 'linkedin-in']"></fa-icon>
-      </figure>
-    </a>
-    <a class="credit" target="_blank" href="https://www.behance.net/gallery/29757805/Landing-page-Aldridge">Designed by Christina Vlastiuk</a>
-  </div>
-</section><!-- End of Social  -->
+    <div class="about-column-wrapper">
+      <!-- Call a Physician -->
+      <div class="about-wrapper">
+        <h3 class="about__col-title">Call a Physician</h3>
+        <figure class="about-icon-wrapper">
+          <fa-icon class="about-icon"[icon]="['fas', 'briefcase-medical']"></fa-icon>
+        </figure>
+        <p class="about-body">
+          Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummyev since
+        </p>
+        <button class="about-btn">
+          <span class="about-btn__learn">learn more</span>
+          <fa-icon class="about-icon"[icon]="['fas', 'long-arrow-alt-right']"></fa-icon>
+        </button>
+      </div>
+      <!-- Qualified Specialists -->
+      <div class="about-wrapper">
+        <h3 class="about__col-title">Qualified Specialists</h3>
+        <figure class="about-icon-wrapper">
+          <fa-icon class="about-icon"[icon]="['fas', 'graduation-cap']"></fa-icon>
+        </figure>
+        <p class="about-body">
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC
+        </p>
+        <button class="about-btn">
+          <span class="about-btn__learn">learn more</span>
+          <fa-icon class="about-icon"[icon]="['fas', 'long-arrow-alt-right']"></fa-icon>
+        </button>
+      </div>
+      <!-- Quality Medicines -->
+      <div class="about-wrapper">
+        <h3 class="about__col-title">Quality Medicines</h3>
+        <figure class="about-icon-wrapper">
+          <fa-icon class="about-icon"[icon]="['fas', 'capsules']"></fa-icon>
+        </figure>
+        <p class="about-body">
+          There are many variations of passages of Lorem Ipsum available, but the have suffered alternation in some form, by injected
+        </p>
+        <button class="about-btn">
+          <span class="about-btn__learn">learn more</span>
+          <fa-icon class="about-icon"[icon]="['fas', 'long-arrow-alt-right']"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </section><!-- End of About us -->
+  <!-- Patients -->
+  <section id="patients" class="patient-section">
+    <h2 class="section-title">our patients</h2>
+    <div class="patient-wrapper">
+      <div class="patient-1">
+        <div class="name-tag">
+          <span class="name">Asher</span>
+          <span class="type">Golden Retriever</span>
+        </div>
+        <img class="patient-img--lg" src="./assets/img/gallery_lg.png" alt="Golden Retriever">
+      </div>
+      <div class="patient-2">
+        <div class="name-tag">
+          <span class="name">Luke</span>
+          <span class="type">Shar Pei</span>
+        </div>
+        <img class="patient-img--lg" src="./assets/img/gallery_md1.png" alt="Shar Pei">
+      </div>
+      <div class="patient-3">
+        <div class="name-tag">
+          <span class="name">Mitch</span>
+          <span class="type">Bulldog</span>
+        </div>
+        <img class="patient-img--lg" src="./assets/img/gallery_sm1.png" alt="Bulldog">
+      </div><div class="patient-4">
+        <div class="name-tag">
+          <span class="name">Otis</span>
+          <span class="type">Corgi</span>
+        </div>
+        <img class="patient-img--lg" src="./assets/img/gallery_sm2.png" alt="Corgi">
+      </div>
+      <div class="patient-5">
+        <div class="name-tag">
+          <span class="name">Barney</span>
+          <span class="type">Labrador</span>
+        </div>
+        <img class="patient-img--lg" src="./assets/img/gallery_md2.png" alt="Labrador">
+      </div>
+    </div>
+  </section><!-- End of Patients -->
+  <!-- Professionals -->
+  <section id="professionals" class="professional-section">
+    <h2 class="section-title">our professionals</h2>
+    <div class="profile-wrapper">
+      <div class="profile-inner-wrapper">
+        <div class="slider-wrapper">
+          <ul class="profile-slider">
+            <li class="profile" *ngFor="let profile of profileList; let i = index" [@profList]="profile.state">
+              <!-- Main profile content -->
+              <div class="main-content">
+                <div class="avatar-wrapper" [ngStyle]="">
+                  <img [src]="'./assets/img/' + profile['img']" [alt]="profile['name']">
+                  <!-- Hidden profile content -->
+                  <div class="hidden-content">
+                    <div class="hidden-wrapper">
+                      <span class="patient">{{ profile['patients'] }}</span>
+                      <span class="patient-unit">patients</span>
+                      <button class="patient-more" type="button" aria-label="more"></button>
+                    </div>
+                  </div><!-- End of hidden profile content -->
+                </div>
+                <div class="detail-wrapper">
+                  <span class="name">{{ profile['name'] }}</span>
+                  <span class="title">{{ profile['title'] }}</span>
+                </div>
+              </div><!-- End of main profile content -->
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button (click)="onPrevProf()" class="carousel-btn --prev" type="button" aria-label="previous professional">
+        <img src="./assets/img/prev.svg" alt="previous">
+      </button>
+      <button (click)="onNextProf()" class="carousel-btn --next" type="button" aria-label="next professional">
+        <img src="./assets/img/prev.svg" alt="next">
+      </button>
+    </div>
+  </section><!-- End of Professionals -->
+  <!-- Contact Us-->
+  <section id="contact" class="contact-section">
+    <div class="contact-wrapper">
+      <div class="contact-box">
+        <span class="title">contact</span>
+        <div class="contact-row">
+          <input class="contact-ctrl" placeholder="Name" type="text">
+        </div>
+        <div class="contact-row">
+          <input class="contact-ctrl" placeholder="E-mail" type="email">
+        </div>
+        <div class="contact-row">
+          <textarea class="contact-ctrl" placeholder="Message" rows="4"></textarea>
+        </div>
+        <button type="button" class="contact-submit">submit</button>
+      </div>
+    </div>
+    <div class="contact-bg">
+      <img src="./assets/img/dog_btm.png" alt="dog">
+    </div>
+  </section><!-- End of Contact Us -->
+  <!-- Social Section -->
+  <section class="social-section">
+    <div class="social-wrapper">
+      <a class="social-link" target="_blank" href="https://github.com/chen1223">
+        <figure class="social-icon-wrapper">
+          <fa-icon class="social-icon"[icon]="['fab', 'github-alt']"></fa-icon>
+        </figure>
+      </a>
+      <a class="social-link" target="_blank" href="https://codepen.io/chen1223">
+        <figure class="social-icon-wrapper">
+          <fa-icon class="social-icon"[icon]="['fab', 'codepen']"></fa-icon>
+        </figure>
+      </a>
+      <a class="social-link" target="_blank" href="https://www.linkedin.com/in/han-wei-chen">
+        <figure class="social-icon-wrapper">
+          <fa-icon class="social-icon"[icon]="['fab', 'linkedin-in']"></fa-icon>
+        </figure>
+      </a>
+      <a class="credit" target="_blank" href="https://www.behance.net/gallery/29757805/Landing-page-Aldridge">Designed by Christina Vlastiuk</a>
+    </div>
+  </section><!-- End of Social  -->
+</div>

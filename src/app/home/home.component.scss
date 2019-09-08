@@ -84,25 +84,25 @@
       }
     }
     .carousel__item:nth-child(1) {
-      transform: rotateY(0deg) translateZ(500px);
+      transform: rotateY(0deg) translateZ(40vw);
       .carousel__img {
         transform: scale(.8);
       }
     }
     .carousel__item:nth-child(2) {
-      transform: rotateY(90deg) translateZ(500px) rotateY(-90deg);
+      transform: rotateY(90deg) translateZ(40vw) rotateY(-90deg);
       .carousel__img {
         transform: scale(.1);
       }
     }
     .carousel__item:nth-child(3) {
-      transform: rotateY(180deg) translateZ(500px) rotateY(-180deg);
+      transform: rotateY(180deg) translateZ(40vw) rotateY(-180deg);
       .carousel__img {
         transform: scale(.1);
       }
     }
     .carousel__item:nth-child(4) {
-      transform: rotateY(270deg) translateZ(500px) rotateY(-270deg);
+      transform: rotateY(270deg) translateZ(40vw) rotateY(-270deg);
       .carousel__img {
         transform: scale(.1);
       }
@@ -118,11 +118,11 @@
 .hero-text {
   display: none;
   position: absolute;
-  width: 250px;
-  height: 250px;
+  width: 16em;
+  height: 16em;
   background: rgba(0, 168, 255, .8);
   border-radius: 100%;
-  top: 8%;
+  top: 10%;
   right: 25%;
   z-index: 100;
   justify-items: center;
@@ -141,6 +141,10 @@
     .quote {
       text-align: center;
       margin-bottom: -10px;
+      img {
+        max-width: 30%;
+        width: 30%;
+      }
     }
     .quote,
     .author,
@@ -164,6 +168,7 @@
       font-size: .6rem;
       font-style: italic;
       text-align: right;
+      font-weight: bold;
       &:before {
         content: '------';
         margin-right: 5px;
@@ -174,7 +179,7 @@
 .selected .hero-text {
   display: flex;
   &:nth-child(1) {
-    top: 8%;
+    top: 10%;
     right: 25%;
   }
 }
@@ -217,7 +222,8 @@
     box-sizing: border-box;
     position: relative;
     transition: transform .45s;
-    &:hover {
+    &:hover,
+    &:active {
       background: #00BAFF;
       transform: scale(1.1);
       z-index: 2;
@@ -283,7 +289,7 @@
   margin: auto;
   margin-top: 40px;
   width: 100vw;
-  height: 100vh;
+  height: 95vh;
   box-sizing: border-box;
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: repeat(6, 1fr);
@@ -451,7 +457,8 @@
     overflow: hidden;
     display: flex;
     box-sizing: border-box;
-    &:hover {
+    &:hover,
+    &:active {
       .hidden-content {
         transform: translateY(0%);
       }
@@ -620,14 +627,26 @@
 }
 /*** Social Section ***/
 .social-section {
-  margin: 3rem 0;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 }
 .social-wrapper {
-  display: flex;
-  width: 13%;
+  display: block;
   margin: 30px auto;
   flex-wrap: wrap;
   text-align: center;
+  a {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  .credit {
+    display: block;
+    font-size: .8rem;
+    margin: auto;
+    margin-top: 15px;
+    outline: none;
+    color: #333;
+  }
 }
 .social-link {
   flex: 1;
@@ -645,10 +664,2122 @@
   font-size: .9rem;
   margin: auto;
 }
-.credit {
-  font-size: .8rem;
-  margin: auto;
-  margin-top: 15px;
-  outline: none;
-  color: #333;
+
+/*--------- Landscape Devices ---------*/
+/***** LG Devices *****/
+@media (min-width: 1200px) and (orientation: landscape){
+
+}
+/***** MD Devices*****/
+@media (min-width: 993px) and (max-width: 1199px) and (orientation: landscape){
+  /*** Menu Section ***/
+  .menu-wrapper {
+    width: 42%;
+    .menu .menu-item {
+      margin: 0 5px;
+    }
+  }
+  /*** Hero Section ***/
+  .carousel-btn {
+    &.--next {
+      right: 3%;
+    }
+    &.--prev {
+      left: 3%;
+    }
+  }
+  .carousel-wrapper {
+    .carousel {
+      .carousel__item:nth-child(1) {
+        &.selected .carousel__img {
+          transform: rotateY(0deg) scale(0.9) !important;
+        }
+        .carousel__img {
+          transform: rotateY(-90deg) scale(.2) !important;
+        }
+      }
+      .carousel__item:nth-child(2) {
+        &.selected .carousel__img {
+          transform: rotateY(90deg) scale(0.9) !important;
+        }
+        .carousel__img {
+          transform: rotateY(0deg) scale(.2) !important;
+        }
+      }
+      .carousel__item:nth-child(3) {
+        &.selected .carousel__img {
+          transform: rotateY(180deg) scale(0.9) !important;
+        }
+        .carousel__img {
+          transform: rotateY(90deg) scale(0.2) !important;
+        }
+        .hero-text {
+          right: 20% !important;
+        }
+      }
+      .carousel__item:nth-child(4) {
+        &.selected .carousel__img {
+          transform: rotateY(270deg) scale(0.9) !important;
+        }
+        .carousel__img {
+          transform: rotateY(180deg) scale(0.2) !important;
+        }
+      }
+    }
+  }
+  /*** About Section ***/
+  .about-section {
+    width: 80%;
+    .about-column-wrapper {
+      width: 95%;
+    }
+  }
+  /*** Professional Section ***/
+  .profile-slider {
+    width: 500%;
+    .profile {
+      width: calc(5% - 40px);
+    }
+  }
+  /*** Contact Section ***/
+  .contact-wrapper {
+    .contact-box {
+      width: 100%;
+      height: 110%;
+    }
+  }
+  /*** Social Section ***/
+  .social-section {
+    margin-top: 6rem;
+  }
+}
+/***** SM Devices *****/
+@media (min-width: 768px) and (max-width: 992px) and (orientation: landscape){
+  /*** Menu Section ***/
+  .menu-wrapper {
+    width: 50%;
+  }
+  /*** Hero Section ***/
+  .hero-text {
+    font-size: 14px;
+    .hero-inner-wrapper {
+      width: 60%;
+    }
+  }
+  .carousel-wrapper {
+    .carousel {
+      .carousel__item:nth-child(1) {
+        &.selected .carousel__img {
+          transform: rotateY(0deg) scale(0.9) !important;
+        }
+        .carousel__img {
+          transform: rotateY(-90deg) scale(.2) !important;
+        }
+        .hero-text {
+          right: 20% !important;
+          transform: rotateY(360deg) translateX(20px) !important;
+        }
+      }
+      .carousel__item:nth-child(2) {
+        &.selected .carousel__img {
+          transform: rotateY(90deg) scale(0.9) !important;
+        }
+        .carousel__img {
+          transform: rotateY(0deg) scale(.2) !important;
+        }
+        .hero-text {
+          transform: rotateY(90deg) translateX(20px) !important;
+        }
+      }
+      .carousel__item:nth-child(3) {
+        &.selected .carousel__img {
+          transform: rotateY(180deg) scale(0.9) !important;
+        }
+        .carousel__img {
+          transform: rotateY(90deg) scale(0.2) !important;
+        }
+        .hero-text {
+          transform: rotateY(180deg) translateX(-50px) !important;
+        }
+      }
+      .carousel__item:nth-child(4) {
+        &.selected .carousel__img {
+          transform: rotateY(270deg) scale(0.9) !important;
+        }
+        .carousel__img {
+          transform: rotateY(180deg) scale(0.2) !important;
+        }
+        .hero-text {
+          transform: rotateY(270deg) translateX(20px) !important;
+        }
+      }
+    }
+  }
+  /*** About Section ***/
+  .about-section {
+    width: 100%;
+    margin-top: 5rem;
+    .about-column-wrapper {
+      width: 95%;
+    }
+    .about-btn {
+      padding: 10px 20px;
+    }
+  }
+  .about-column-wrapper .about-wrapper {
+    .about__col-title {
+      font-size: 16px;
+    }
+    .about-icon-wrapper {
+      font-size: 1.6rem;
+    }
+  }
+  /*** Patient Section ***/
+  .name-tag {
+    .name {
+      font-size: 1.4rem;
+      margin-bottom: 5px;
+    }
+  }
+  /*** Professional Section ***/
+  .professional-section {
+    .profile-inner-wrapper {
+      width: 100%;
+    }
+  }
+  .profile-slider {
+    .profile {
+      width: calc(5% - 40px);
+    }
+  }
+  /*** Contact Section ***/
+  .contact-section {
+    .contact-wrapper {
+      grid-column: 1/6;
+    }
+  }
+  .contact-wrapper {
+    .contact-box {
+      height: 130%;
+      margin-left: 10%;
+    }
+  }
+  /*** Social Section ***/
+  .social-section {
+    margin-top: 10rem;
+  }
+}
+/***** XS Devices *****/
+@media (min-width: 480px) and (max-width: 767px) and (orientation: landscape){
+  /*** Menu Section ***/
+  .page-title {
+    width: 100%;
+  }
+  .menu-wrapper {
+    width: 90%;
+    .menu {
+      display: block;
+      text-align: center;
+      .menu-item {
+        margin: 0 10px;
+        display: inline-block;
+      }
+    }
+  }
+  /*** Hero Section ***/
+  .hero-text {
+    font-size: 14px;
+    width: 13em;
+    height: 13em;
+    background: rgba(0, 168, 255, 0.7);
+    .hero-inner-wrapper {
+      width: 60%;
+      .text-body {
+        font-size: 16px;
+      }
+    }
+  }
+  .carousel-btn {
+    bottom: 25%;
+    &.--next {
+      right: 3%;
+    }
+    &.--prev {
+      left: 3%;
+    }
+  }
+  .carousel-wrapper {
+    .carousel {
+      margin-top: 4rem;
+      .carousel__item:nth-child(1) {
+        &.selected .carousel__img {
+          transform: rotateY(0deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(-90deg) scale(.2) translateY(60px) !important;
+        }
+        .hero-text {
+          right: 20% !important;
+          transform: rotateY(360deg) translateX(40px) !important;
+        }
+      }
+      .carousel__item:nth-child(2) {
+        &.selected .carousel__img {
+          transform: rotateY(90deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(0deg) scale(.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(90deg) translateX(20px) !important;
+        }
+      }
+      .carousel__item:nth-child(3) {
+        &.selected .carousel__img {
+          transform: rotateY(180deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(90deg) scale(0.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(180deg) translateX(-80px) !important;
+        }
+      }
+      .carousel__item:nth-child(4) {
+        &.selected .carousel__img {
+          transform: rotateY(270deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(180deg) scale(0.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(270deg) translateX(-10px) !important;
+        }
+      }
+    }
+  }
+  /*** About Section ***/
+  .about-section {
+    width: 100%;
+    margin-top: 5rem;
+  }
+  .about-us {
+    width: 80%;
+  }
+  .about-column-wrapper {
+    display: block;
+    width: 100%;
+    .about-wrapper {
+      width: 40%;
+      margin: auto;
+      margin-bottom: 40px;
+    }
+  }
+  /*** Patient Section ***/
+  .patient-section {
+    margin-top: 6rem;
+  }
+  .name-tag {
+    .name {
+      font-size: 16px;
+      margin-bottom: 0px
+    }
+    .type {
+      font-size: 12px;
+    }
+  }
+  .patient-wrapper {
+    .patient-1 {
+      grid-column: 1/5;
+      .name-tag {
+        top: 15%;
+        left: calc(50% - 40px);
+      }
+      img {
+        height: 70%;
+        max-height: 70%;
+      }
+    }
+    .patient-2 {
+      grid-column: 5/9;
+      .name-tag {
+        top: 20%;
+        right: 25%;
+      }
+      img {
+        max-width: 90%;
+        width: 90%;
+        max-height: unset;
+        height: auto;
+      }
+    }
+    .patient-3 {
+      grid-column: 9/12;
+      .name-tag {
+        top: 8%;
+        left: 5%;
+      }
+      img {
+        height: 85%;
+        max-height: 85%;
+        margin-bottom: 0;
+      }
+    }
+    .patient-4 {
+      grid-column: 5/8;
+      .name-tag {
+        left: 0%;
+      }
+      img {
+        height: 85%;
+        max-height: 85%;
+      }
+    }
+    .patient-5 {
+      grid-column: 8/12;
+      .name-tag {
+        bottom: initial;
+        top: 15%;
+      }
+      img {
+        width: 85%;
+        max-width: 85%;
+        margin: auto;
+        margin-bottom: 0;
+      }
+    }
+  }
+  /*** Professional Section ***/
+  .carousel-btn {
+    width: 50px;
+  }
+  .professional-section {
+    margin-top: 5rem;
+    height: 100vh;
+    .profile-inner-wrapper {
+      width: 100%;
+    }
+    .profile-wrapper {
+      .carousel-btn {
+        &.--prev {
+          left: 0;
+        }
+        &.--next {
+          right: 0;
+        }
+      }
+    }
+  }
+  .profile-slider {
+    width: 300%;
+    .profile {
+      width: calc(11% - 40px);
+    }
+  }
+  .profile {
+    .detail-wrapper {
+      .name {
+        font-size: 14px;
+      }
+      .title {
+        font-size: 12px;
+      }
+    }
+    .hidden-wrapper {
+      .patient {
+        font-size: 2.2rem;
+      }
+      .patient-unit {
+        font-size: 16px;
+      }
+      .patient-more {
+         margin-top: 0;
+      }
+    }
+  }
+  /*** Contact Section ***/
+  .contact-section {
+    margin-top: 2rem;
+    .contact-wrapper {
+      grid-column: 1/7;
+    }
+  }
+  .contact-wrapper {
+    .contact-box {
+      height: 110%;
+      margin-left: 10%;
+      padding: 20px 30px;
+      .title {
+        font-size: 20px;
+        margin: 10px 0;
+      }
+      .contact-row {
+        margin: 20px 0;
+        .contact-ctrl {
+          font-size: 14px;
+        }
+        .contact-ctrl::placeholder {
+          font-size: 13px;
+        }
+      }
+      .contact-submit {
+        font-size: 14px;
+        width: 50%;
+      }
+    }
+  }
+  /*** Social Section ***/
+  .social-section {
+    margin-top: 5rem;
+  }
+}
+/***** XXS Devices *****/
+@media (max-width: 479px) and (orientation: landscape){
+  /*** Menu Section ***/
+  .page-title {
+    width: 100%;
+  }
+  .menu-wrapper {
+    width: 80%;
+    .menu {
+      flex-wrap: wrap;
+      text-align: center;
+      .menu-item {
+        width: calc(50% - 10px);
+        margin: 5px 0;
+      }
+    }
+  }
+  /*** Hero Section ***/
+  .hero-text {
+    font-size: 12px;
+    width: 12em;
+    height: 12em;
+    background: rgba(0, 168, 255, 0.7);
+    .hero-inner-wrapper {
+      width: 57%;
+      .text-body {
+        font-size: 14px;
+      }
+    }
+  }
+  .carousel-btn {
+    bottom: 35%;
+    width: 50px;
+    &.--next {
+      right: 3%;
+    }
+    &.--prev {
+      left: 3%;
+    }
+  }
+  .carousel-wrapper {
+    .carousel {
+      margin-top: 2rem;
+      .carousel__item:nth-child(1) {
+        &.selected .carousel__img {
+          transform: rotateY(0deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(-90deg) scale(.2) translateY(60px) !important;
+        }
+        .hero-text {
+          right: 20% !important;
+          transform: rotateY(360deg) translateX(40px) !important;
+        }
+      }
+      .carousel__item:nth-child(2) {
+        &.selected .carousel__img {
+          transform: rotateY(90deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(0deg) scale(.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(90deg) translateX(-10px) !important;
+        }
+      }
+      .carousel__item:nth-child(3) {
+        &.selected .carousel__img {
+          transform: rotateY(180deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(90deg) scale(0.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(180deg) translateX(-100px) !important;
+        }
+      }
+      .carousel__item:nth-child(4) {
+        &.selected .carousel__img {
+          transform: rotateY(270deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(180deg) scale(0.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(270deg) translateX(-20px) !important;
+        }
+      }
+    }
+  }
+  /*** About Section ***/
+  .about-section {
+    width: 100%;
+    margin-top: 3rem;
+  }
+  .about-us {
+    width: 80%;
+  }
+  .about-column-wrapper {
+    display: block;
+    width: 100%;
+    margin-top: 4rem;
+    .about-wrapper {
+      width: 90%;
+      margin: auto;
+      margin-bottom: 40px;
+    }
+  }
+  /*** Patient Section ***/
+  .patient-section {
+    margin-top: 6rem;
+  }
+  .name-tag {
+    .name {
+      font-size: 16px;
+      margin-bottom: 0px
+    }
+    .type {
+      font-size: 12px;
+    }
+  }
+  .patient-wrapper {
+    .patient-1 {
+      grid-column: 1/5;
+      .name-tag {
+        top: 15%;
+        left: calc(50% - 40px);
+      }
+      img {
+        height: 70%;
+        max-height: 70%;
+      }
+    }
+    .patient-2 {
+      grid-column: 5/9;
+      .name-tag {
+        top: 20%;
+        right: 25%;
+      }
+      img {
+        max-width: 90%;
+        width: 90%;
+        max-height: unset;
+        height: auto;
+      }
+    }
+    .patient-3 {
+      grid-column: 9/12;
+      .name-tag {
+        top: 8%;
+        left: 5%;
+      }
+      img {
+        height: 85%;
+        max-height: 85%;
+        margin-bottom: 0;
+      }
+    }
+    .patient-4 {
+      grid-column: 5/8;
+      .name-tag {
+        left: 0%;
+      }
+      img {
+        height: 85%;
+        max-height: 85%;
+      }
+    }
+    .patient-5 {
+      grid-column: 8/12;
+      .name-tag {
+        bottom: initial;
+        top: 15%;
+      }
+      img {
+        width: 85%;
+        max-width: 85%;
+        margin: auto;
+        margin-bottom: 0;
+      }
+    }
+  }
+  /*** Professional Section ***/
+  .carousel-btn {
+    width: 50px;
+  }
+  .professional-section {
+    margin-top: 3rem;
+    height: 100vh;
+    .profile-inner-wrapper {
+      width: 100%;
+    }
+    .profile-wrapper {
+      .carousel-btn {
+        &.--prev {
+          left: 0;
+        }
+        &.--next {
+          right: 0;
+        }
+      }
+    }
+  }
+  .profile-slider {
+    width: 200%;
+    .profile {
+      width: calc(25% - 40px);
+    }
+  }
+  .profile {
+    .detail-wrapper {
+      .name {
+        font-size: 14px;
+      }
+      .title {
+        font-size: 12px;
+      }
+    }
+    .hidden-wrapper {
+      .patient {
+        font-size: 2.2rem;
+      }
+      .patient-unit {
+        font-size: 16px;
+      }
+      .patient-more {
+         margin-top: 0;
+      }
+    }
+  }
+  /*** Contact Section ***/
+  .contact-section {
+    margin-top: 4rem;
+    .contact-wrapper {
+      grid-column: 1/last-line;
+    }
+  }
+  .contact-wrapper {
+    .contact-box {
+      height: 125%;
+      width: 85%;
+      padding: 20px 25px;
+      .title {
+        font-size: 20px;
+        margin: 0px 0;
+      }
+      .contact-row {
+        margin: 10px 0;
+        .contact-ctrl {
+          font-size: 14px;
+        }
+        .contact-ctrl::placeholder {
+          font-size: 13px;
+        }
+      }
+      .contact-submit {
+        font-size: 14px;
+        width: 50%;
+        margin-top: 5px;
+      }
+    }
+  }
+  /*** Social Section ***/
+  .social-section {
+    margin-top: 6rem;
+  }
+}
+/*--------- Portrait Devices ---------*/
+/***** LG Devices *****/
+@media (min-width: 1200px) and (orientation: portrait){
+  .page-title {
+    font-size: 2.4rem;
+    width: 100%;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+  /*** Menu Section ***/
+  .menu-wrapper {
+    width: 80%;
+    .menu {
+      display: block;
+      text-align: center;
+      .menu-item {
+        margin: 0 15px;
+        display: inline-block;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  /*** Hero Section ***/
+  .carousel-btn {
+    &.--next {
+      right: 5%;
+    }
+    &.--prev {
+      left: 5%;
+    }
+  }
+  .carousel-wrapper {
+    height: 60vh;
+    margin-top: 4rem;
+    .carousel-btn {
+      bottom: 40%;
+    }
+    .carousel {
+      margin-top: 12rem;
+      .carousel__item {
+        height: 75%;
+        max-height: 75%;
+      }
+      .carousel__item:nth-child(1) {
+        &.selected .carousel__img {
+          transform: rotateY(0deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(-90deg) scale(.2) translateY(60px) !important;
+        }
+        .hero-text {
+          right: 20% !important;
+          transform: rotateY(360deg) translateX(40px) !important;
+        }
+      }
+      .carousel__item:nth-child(2) {
+        &.selected .carousel__img {
+          transform: rotateY(90deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(0deg) scale(.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(90deg) translateX(60px) !important;
+        }
+      }
+      .carousel__item:nth-child(3) {
+        &.selected .carousel__img {
+          transform: rotateY(180deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(90deg) scale(0.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(180deg) translateX(-20px) !important;
+        }
+      }
+      .carousel__item:nth-child(4) {
+        &.selected .carousel__img {
+          transform: rotateY(270deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(180deg) scale(0.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(270deg) translateX(40px) !important;
+        }
+      }
+    }
+  }
+  /*** About Section ***/
+  .about-section {
+    margin-top: 8rem;
+    width: 80%;
+  }
+  .about-us {
+    width: 70%;
+    .about-detail {
+      font-size: 1.2rem;
+    }
+  }
+  .about-column-wrapper {
+    width: 100%;
+    .about-wrapper {
+      .about-body {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  /*** Patient Section ***/
+  .name-tag {
+    .name {
+      font-size: 2.2rem;
+    }
+    .type {
+      font-size: 1.4rem;
+    }
+  }
+  .patient-wrapper {
+    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    height: 100vh;
+    .patient-1 {
+      grid-row: 5/13;
+      grid-column: 4/last-line;
+      .name-tag {
+        left: calc(50% - 80px);
+        top: 10%;
+      }
+      img {
+        height: 70%;
+        max-height: 70%;
+        margin-bottom: 5%;
+      }
+    }
+    .patient-2 {
+      grid-row: 1/5;
+      grid-column: 1/last-line;
+      .name-tag {
+        right: 14%;
+        top: 20%;
+      }
+      img {
+        max-height: 80%;
+        height: 80%;
+        margin-left: 0%;
+      }
+    }
+    .patient-3 {
+      grid-row: 5/9;
+      grid-column: 1/4;
+      border-bottom: 3px solid #ddd;
+      img {
+        height: 85%;
+        max-height: 85%;
+        margin-left: 8%;
+        margin-bottom: 5%;
+      }
+      .name-tag {
+        right: 10%;
+        top: 15%;
+        left: unset;
+      }
+    }
+    .patient-4 {
+      grid-row: 9/13;
+      grid-column: 1/4;
+      img {
+        height: 85%;
+        max-height: 85%;
+        margin-bottom: 5%;
+        margin-right: 0%;
+      }
+      .name-tag {
+        top: 33%;
+        left: 11%;
+      }
+    }
+    .patient-5 {
+      grid-row: 13/last-line;
+      grid-column: 1/last-line;
+      img {
+        max-height: 100%;
+        height: 100%;
+        width: initial;
+        max-width: initial;
+        margin-right: 15%;
+      }
+      .name-tag {
+        bottom: 43%;
+        left: 13%;
+      }
+    }
+  }
+  /*** Professional Section ***/
+  .carousel-btn {
+    width: 80px;
+  }
+  .professional-section {
+    .profile-inner-wrapper {
+      width: 100%;
+    }
+    .profile-wrapper {
+      .carousel-btn {
+        bottom: 50%;
+        &.--prev {
+          left: 3%;
+        }
+        &.--next {
+          right: 3%;
+        }
+      }
+    }
+  }
+  .profile-slider {
+    min-height: 400px;
+    .profile {
+      width: calc(5% - 40px);
+    }
+  }
+  .profile {
+    .detail-wrapper {
+      .name {
+        font-size: 1.6rem;
+      }
+      .title {
+        font-size: 1.4rem;
+      }
+    }
+    .hidden-wrapper {
+      .patient {
+        font-size: 3.5rem;
+      }
+      .patient-unit {
+        font-size: 2rem;
+        margin-top: 5px;
+      }
+      .patient-more {
+        border-right: 4px solid white;
+        border-bottom: 4px solid white;
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+  /*** Contact Section ***/
+  .contact-section {
+    height: 60vh;
+    margin-top: 0;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    .contact-wrapper {
+      grid-column: 1/5;
+      grid-row: 2/5;
+    }
+    .contact-bg {
+      grid-column: 2/last-line;
+      grid-row: 1/last-line;
+    }
+  }
+  .contact-wrapper {
+    .contact-box {
+      width: 70%;
+      height: 85%;
+      .title {
+        font-size: 2rem;
+        margin: 20px 0;
+      }
+      .contact-row {
+        .contact-ctrl {
+          font-size: 1.2rem;
+        }
+        .contact-ctrl::placeholder {
+          font-size: 1.05rem;
+        }
+      }
+      .contact-submit {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  /*** Social Section ***/
+  .social-section {
+    margin-top: -5rem;
+  }
+}
+/***** MD Devices*****/
+@media (min-width: 993px) and (max-width: 1199px) and (orientation: portrait){
+  .page-title {
+    font-size: 2.4rem;
+    width: 100%;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+  /*** Menu Section ***/
+  .menu-wrapper {
+    width: 80%;
+    .menu {
+      display: block;
+      text-align: center;
+      .menu-item {
+        margin: 0 15px;
+        display: inline-block;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  /*** Hero Section ***/
+  .carousel-btn {
+    &.--next {
+      right: 3%;
+    }
+    &.--prev {
+      left: 3%;
+    }
+  }
+  .carousel-wrapper {
+    height: 60vh;
+    .carousel {
+      margin-top: 6rem;
+      .carousel__item:nth-child(1) {
+        &.selected .carousel__img {
+          transform: rotateY(0deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(-90deg) scale(.2) translateY(60px) !important;
+        }
+        .hero-text {
+          right: 20% !important;
+          transform: rotateY(360deg) translateX(40px) !important;
+        }
+      }
+      .carousel__item:nth-child(2) {
+        &.selected .carousel__img {
+          transform: rotateY(90deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(0deg) scale(.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(90deg) translateX(60px) !important;
+        }
+      }
+      .carousel__item:nth-child(3) {
+        &.selected .carousel__img {
+          transform: rotateY(180deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(90deg) scale(0.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(180deg) translateX(-20px) !important;
+        }
+      }
+      .carousel__item:nth-child(4) {
+        &.selected .carousel__img {
+          transform: rotateY(270deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(180deg) scale(0.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(270deg) translateX(40px) !important;
+        }
+      }
+    }
+  }
+  /*** About Section ***/
+  .about-section {
+    margin-top: 5rem;
+    width: 100%;
+  }
+  .about-us {
+    width: 70%;
+  }
+  /*** Patient Section ***/
+  .name-tag {
+    .name {
+      font-size: 2.2rem;
+    }
+    .type {
+      font-size: 1.4rem;
+    }
+  }
+  .patient-wrapper {
+    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    height: 100vh;
+    .patient-1 {
+      grid-row: 5/13;
+      grid-column: 4/last-line;
+      .name-tag {
+        left: calc(50% - 80px);
+        top: 10%;
+      }
+      img {
+        height: 70%;
+        max-height: 70%;
+        margin-bottom: 5%;
+      }
+    }
+    .patient-2 {
+      grid-row: 1/5;
+      grid-column: 1/last-line;
+      .name-tag {
+        right: 14%;
+        top: 20%;
+      }
+      img {
+        max-height: 80%;
+        height: 80%;
+        margin-left: 0%;
+      }
+    }
+    .patient-3 {
+      grid-row: 5/9;
+      grid-column: 1/4;
+      border-bottom: 3px solid #ddd;
+      img {
+        height: 85%;
+        max-height: 85%;
+        margin-left: 8%;
+        margin-bottom: 5%;
+      }
+      .name-tag {
+        right: 10%;
+        top: 15%;
+        left: unset;
+      }
+    }
+    .patient-4 {
+      grid-row: 9/13;
+      grid-column: 1/4;
+      img {
+        height: 85%;
+        max-height: 85%;
+        margin-bottom: 5%;
+        margin-right: 0%;
+      }
+      .name-tag {
+        top: 33%;
+        left: 11%;
+      }
+    }
+    .patient-5 {
+      grid-row: 13/last-line;
+      grid-column: 1/last-line;
+      img {
+        max-height: 100%;
+        height: 100%;
+        width: initial;
+        max-width: initial;
+        margin-right: 15%;
+      }
+      .name-tag {
+        bottom: 43%;
+        left: 13%;
+      }
+    }
+  }
+  /*** Professional Section ***/
+  .professional-section {
+    .profile-inner-wrapper {
+      width: 100%;
+    }
+    .profile-wrapper {
+      .carousel-btn {
+        bottom: 50%;
+        &.--prev {
+          left: 3%;
+        }
+        &.--next {
+          right: 3%;
+        }
+      }
+    }
+  }
+  .profile-slider {
+    width: 400%;
+    .profile {
+      width: calc(7% - 40px);
+    }
+  }
+  .profile {
+    .detail-wrapper {
+      .name {
+        font-size: 1.4rem;
+      }
+      .title {
+        font-size: 1.2rem;
+      }
+    }
+    .hidden-wrapper {
+      .patient-unit {
+        font-size: 1.6rem;
+        margin-top: 5px;
+      }
+      .patient-more {
+        border-right: 3px solid white;
+        border-bottom: 3px solid white;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  /*** Contact Section ***/
+  .contact-section {
+    height: 60vh;
+    margin-top: 0;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    .contact-wrapper {
+      grid-column: 1/5;
+      grid-row: 2/5;
+    }
+    .contact-bg {
+      grid-column: 2/last-line;
+      grid-row: 1/last-line;
+    }
+  }
+  .contact-wrapper {
+    .contact-box {
+      width: 75%;
+      height: 105%;
+      .title {
+        font-size: 1.8rem;
+        margin: 20px 0;
+      }
+      .contact-row {
+        .contact-ctrl {
+          font-size: 1.2rem;
+        }
+        .contact-ctrl::placeholder {
+          font-size: 1.05rem;
+        }
+      }
+      .contact-submit {
+        font-size: 1.2rem;
+        margin-top: 5px;
+      }
+    }
+  }
+  /*** Social Section ***/
+  .social-section {
+    margin-top: -3rem;
+  }
+}
+/***** SM Devices *****/
+@media (min-width: 768px) and (max-width: 992px) and (orientation: portrait){
+  .section-title {
+    font-size: 2rem;
+  }
+  /*** Menu Section ***/
+  .page-title {
+    width: 100%;
+  }
+  .menu-wrapper {
+    width: 50%;
+  }
+  /*** Hero Section ***/
+  .carousel-btn {
+    bottom: 35%;
+    &.--next {
+      right: 3%;
+    }
+    &.--prev {
+      left: 3%;
+    }
+  }
+  .carousel-wrapper {
+    height: 60vh;
+    .carousel {
+      margin-top: 6rem;
+      .carousel__item:nth-child(1) {
+        &.selected .carousel__img {
+          transform: rotateY(0deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(-90deg) scale(.2) translateY(60px) !important;
+        }
+        .hero-text {
+          right: 20% !important;
+          transform: rotateY(360deg) translateX(40px) !important;
+        }
+      }
+      .carousel__item:nth-child(2) {
+        &.selected .carousel__img {
+          transform: rotateY(90deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(0deg) scale(.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(90deg) translateX(-10px) !important;
+        }
+      }
+      .carousel__item:nth-child(3) {
+        &.selected .carousel__img {
+          transform: rotateY(180deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(90deg) scale(0.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(180deg) translateX(-100px) !important;
+        }
+      }
+      .carousel__item:nth-child(4) {
+        &.selected .carousel__img {
+          transform: rotateY(270deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(180deg) scale(0.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(270deg) translateX(-20px) !important;
+        }
+      }
+    }
+  }
+  /*** About Section ***/
+  .about-section {
+    margin-top: 5rem;
+    width: 100%;
+  }
+  .about-us {
+    width: 70%;
+  }
+  .about-column-wrapper {
+    width: 85%;
+    margin-top: 4rem;
+    .about-wrapper {
+      .about__col-title {
+        width: 80%;
+      }
+      .about-icon-wrapper {
+        font-size: 1.4rem;
+      }
+      .about-btn {
+        padding: 10px 20px;
+      }
+    }
+  }
+  /*** Patient Section ***/
+  .name-tag {
+    .name {
+      font-size: 2.2rem;
+    }
+    .type {
+      font-size: 1.4rem;
+    }
+  }
+  .patient-wrapper {
+    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    height: 100vh;
+    .patient-1 {
+      grid-row: 5/13;
+      grid-column: 4/last-line;
+      .name-tag {
+        left: calc(50% - 80px);
+        top: 10%;
+      }
+      img {
+        height: 70%;
+        max-height: 70%;
+        margin-bottom: 5%;
+      }
+    }
+    .patient-2 {
+      grid-row: 1/5;
+      grid-column: 1/last-line;
+      .name-tag {
+        right: 14%;
+        top: 20%;
+      }
+      img {
+        max-height: 80%;
+        height: 80%;
+        margin-left: 0%;
+      }
+    }
+    .patient-3 {
+      grid-row: 5/9;
+      grid-column: 1/4;
+      border-bottom: 3px solid #ddd;
+      img {
+        height: 85%;
+        max-height: 85%;
+        margin-left: 8%;
+        margin-bottom: 5%;
+      }
+      .name-tag {
+        right: 10%;
+        top: 15%;
+        left: unset;
+      }
+    }
+    .patient-4 {
+      grid-row: 9/13;
+      grid-column: 1/4;
+      img {
+        height: 85%;
+        max-height: 85%;
+        margin-bottom: 5%;
+        margin-right: 0%;
+      }
+      .name-tag {
+        top: 33%;
+        left: 11%;
+      }
+    }
+    .patient-5 {
+      grid-row: 13/last-line;
+      grid-column: 1/last-line;
+      img {
+        max-height: 100%;
+        height: 100%;
+        width: initial;
+        max-width: initial;
+        margin-right: 15%;
+      }
+      .name-tag {
+        bottom: 43%;
+        left: 13%;
+      }
+    }
+  }
+  /*** Professional Section ***/
+  .carousel-btn {
+    width: 50px;
+  }
+  .professional-section {
+    margin-top: 4rem;
+    .profile-inner-wrapper {
+      width: 100%;
+    }
+    .profile-wrapper {
+      .carousel-btn {
+        &.--prev {
+          left: 3%;
+        }
+        &.--next {
+          right: 3%;
+        }
+      }
+    }
+  }
+  .profile-slider {
+    width: 400%;
+    .profile {
+      width: calc(7% - 40px);
+    }
+  }
+  /*** Contact Section ***/
+  .contact-section {
+    height: 60vh;
+    margin-top: 0;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    .contact-wrapper {
+      grid-column: 1/5;
+      grid-row: 2/5;
+    }
+    .contact-bg {
+      grid-column: 2/last-line;
+      grid-row: 1/last-line;
+    }
+  }
+  .contact-wrapper {
+    .contact-box {
+      width: 75%;
+      height: 110%;
+      .title {
+        margin: 10px 0;
+        font-size: 1.4rem;
+      }
+      .contact-row {
+        margin: 15px 0;
+        .contact-ctrl {
+          font-size: 14px;
+        }
+        .contact-ctrl::placeholder {
+          font-size: 13px;
+        }
+      }
+      .contact-submit {
+        margin-top: 5px;
+        font-size: 14px;
+        width: 40%;
+      }
+    }
+  }
+  /*** Social Section ***/
+  .social-section {
+    margin-top: -1rem;
+  }
+}
+/***** XS Devices *****/
+@media (min-width: 480px) and (max-width: 767px) and (orientation: portrait){
+  /*** Menu Section ***/
+  .page-title {
+    width: 100%;
+  }
+  .menu-wrapper {
+    width: 90%;
+    .menu {
+      display: block;
+      text-align: center;
+      .menu-item {
+        margin: 0 10px;
+        display: inline-block;
+      }
+    }
+  }
+  /*** Hero Section ***/
+  .hero-text {
+    font-size: 14px;
+    width: 13em;
+    height: 13em;
+    background: rgba(0, 168, 255, 0.7);
+    .hero-inner-wrapper {
+      width: 50%;
+      .text-body {
+        font-size: 16px;
+      }
+    }
+  }
+  .carousel-btn {
+    bottom: 35%;
+    width: 50px;
+    &.--next {
+      right: 3%;
+    }
+    &.--prev {
+      left: 3%;
+    }
+  }
+  .carousel-wrapper {
+    height: 50vh;
+    .carousel {
+      margin-top: 2rem;
+      .carousel__item:nth-child(1) {
+        &.selected .carousel__img {
+          transform: rotateY(0deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(-90deg) scale(.2) translateY(60px) !important;
+        }
+        .hero-text {
+          right: 20% !important;
+          transform: rotateY(360deg) translateX(40px) !important;
+        }
+      }
+      .carousel__item:nth-child(2) {
+        &.selected .carousel__img {
+          transform: rotateY(90deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(0deg) scale(.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(90deg) translateX(-10px) !important;
+        }
+      }
+      .carousel__item:nth-child(3) {
+        &.selected .carousel__img {
+          transform: rotateY(180deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(90deg) scale(0.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(180deg) translateX(-100px) !important;
+        }
+      }
+      .carousel__item:nth-child(4) {
+        &.selected .carousel__img {
+          transform: rotateY(270deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(180deg) scale(0.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(270deg) translateX(-20px) !important;
+        }
+      }
+    }
+  }
+  /*** About Section ***/
+  .about-section {
+    width: 100%;
+    margin-top: 3rem;
+  }
+  .about-us {
+    width: 80%;
+  }
+  .about-column-wrapper {
+    display: block;
+    width: 100%;
+    margin-top: 4rem;
+    .about-wrapper {
+      width: 60%;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+  }
+  /*** Patient Section ***/
+  .patient-section {
+    margin-top: 5rem;
+  }
+  .patient-wrapper {
+    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    height: 100vh;
+    .patient-1 {
+      grid-row: 5/13;
+      grid-column: 4/last-line;
+      .name-tag {
+        left: calc(50% - 40px);
+        top: 10%;
+      }
+      img {
+        height: 70%;
+        max-height: 70%;
+        margin-bottom: 5%;
+      }
+    }
+    .patient-2 {
+      grid-row: 1/5;
+      grid-column: 1/last-line;
+      .name-tag {
+        right: 14%;
+        top: 20%;
+      }
+      img {
+        max-height: 70%;
+        height: 70%;
+        margin-left: 0%;
+      }
+    }
+    .patient-3 {
+      grid-row: 5/9;
+      grid-column: 1/4;
+      border-bottom: 1px solid #ddd;
+      img {
+        height: 85%;
+        max-height: 85%;
+        margin-left: 0%;
+        margin-bottom: 5%;
+      }
+      .name-tag {
+        right: 3%;
+        top: 15%;
+        left: unset;
+      }
+    }
+    .patient-4 {
+      grid-row: 9/13;
+      grid-column: 1/4;
+      img {
+        height: 85%;
+        max-height: 85%;
+        margin-bottom: 5%;
+        margin-right: 0%;
+      }
+      .name-tag {
+        top: 35%;
+        left: 3%;
+      }
+    }
+    .patient-5 {
+      grid-row: 13/last-line;
+      grid-column: 1/last-line;
+      img {
+        max-height: 100%;
+        height: 100%;
+        width: initial;
+        max-width: initial;
+        margin-right: 8%;
+      }
+      .name-tag {
+        bottom: 43%;
+        left: 10%;
+      }
+    }
+  }
+  /*** Professional Section ***/
+  .carousel-btn {
+    width: 50px;
+  }
+  .professional-section {
+    margin-top: 4rem;
+    height: 60vh;
+    .profile-inner-wrapper {
+      width: 100%;
+    }
+    .profile-wrapper {
+      .carousel-btn {
+        &.--prev {
+          left: 0;
+        }
+        &.--next {
+          right: 0;
+        }
+      }
+    }
+  }
+  .profile-slider {
+    width: 300%;
+    .profile {
+      width: calc(12% - 40px);
+    }
+  }
+  .profile {
+    .detail-wrapper {
+      .name {
+        font-size: 14px;
+      }
+      .title {
+        font-size: 12px;
+      }
+    }
+    .hidden-wrapper {
+      .patient {
+        font-size: 2.2rem;
+      }
+      .patient-unit {
+        font-size: 16px;
+      }
+      .patient-more {
+         margin-top: 0;
+      }
+    }
+  }
+  /*** Contact Section ***/
+  .contact-section {
+    height: 50vh;
+    margin-top: 0;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    .contact-wrapper {
+      grid-column: 1/5;
+      grid-row: 1/5;
+    }
+    .contact-bg {
+      grid-column: 2/last-line;
+      grid-row: 1/last-line;
+    }
+  }
+  .contact-wrapper {
+    .contact-box {
+      width: 85%;
+      height: 110%;
+      padding: 15px 20px;
+      .title {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+      .contact-row {
+        margin: 10px 0;
+        .contact-ctrl {
+          font-size: 14px;
+          width: 90%;
+          padding: 4px 11px;
+        }
+        .contact-ctrl::placeholder {
+          font-size: 13px;
+        }
+      }
+      .contact-submit {
+        margin-top: 0px;
+        font-size: 12px;
+        width: 50%;
+        padding: 5px 10px;
+      }
+    }
+  }
+}
+/***** XXS Devices *****/
+@media (max-width: 479px) and (orientation: portrait){
+  .section-title {
+    font-size: 1.2rem;
+    margin: 10px auto;
+  }
+  /*** Menu Section ***/
+  .page-title {
+    width: 100%;
+  }
+  .menu-wrapper {
+    width: 90%;
+    .menu {
+      flex-wrap: wrap;
+      text-align: center;
+      .menu-item {
+        width: calc(50% - 10px);
+        margin: 5px 0;
+      }
+    }
+  }
+  /*** Hero Section ***/
+  .hero-text {
+    font-size: 12px;
+    width: 12em;
+    height: 12em;
+    background: rgba(0, 168, 255, 0.7);
+    .hero-inner-wrapper {
+      width: 57%;
+      .text-body {
+        font-size: 14px;
+      }
+      .author {
+        font-size: .5rem;
+      }
+    }
+  }
+  .carousel-btn {
+    bottom: 35%;
+    width: 50px;
+    &.--next {
+      right: 3%;
+    }
+    &.--prev {
+      left: 3%;
+    }
+  }
+  .carousel-wrapper {
+    height: 50vh;
+    .carousel {
+      margin-top: 2rem;
+      .carousel__item:nth-child(1) {
+        &.selected .carousel__img {
+          transform: rotateY(0deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(-90deg) scale(.2) translateY(60px) !important;
+        }
+        .hero-text {
+          right: 20% !important;
+          transform: rotateY(360deg) translateX(40px) !important;
+        }
+      }
+      .carousel__item:nth-child(2) {
+        &.selected .carousel__img {
+          transform: rotateY(90deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(0deg) scale(.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(90deg) translateX(10px) !important;
+        }
+      }
+      .carousel__item:nth-child(3) {
+        &.selected .carousel__img {
+          transform: rotateY(180deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(90deg) scale(0.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(180deg) translateX(-80px) !important;
+        }
+      }
+      .carousel__item:nth-child(4) {
+        &.selected .carousel__img {
+          transform: rotateY(270deg) scale(1) !important;
+        }
+        .carousel__img {
+          transform: rotateY(180deg) scale(0.2) translateY(60px) !important;
+        }
+        .hero-text {
+          transform: rotateY(270deg) translateX(-10px) !important;
+        }
+      }
+    }
+  }
+  /*** About Section ***/
+  .about-section {
+    width: 100%;
+    margin-top: 3rem;
+  }
+  .about-us {
+    width: 90%;
+  }
+  .about-column-wrapper {
+    display: block;
+    width: 100%;
+    margin-top: 4rem;
+    .about-wrapper {
+      width: 80%;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+  }
+  /*** Patient Section ***/
+  .patient-section {
+    margin-top: 4rem;
+  }
+  .name-tag {
+    .name {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+    .type {
+      font-size: 12px;
+    }
+  }
+  .patient-wrapper {
+    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    height: 100vh;
+    margin-top: 30px;
+    .patient-1 {
+      grid-row: 5/13;
+      grid-column: 4/last-line;
+      .name-tag {
+        left: calc(50% - 40px);
+        top: 8%;
+      }
+      img {
+        height: 70%;
+        max-height: 70%;
+        margin-bottom: 5%;
+      }
+    }
+    .patient-2 {
+      grid-row: 1/5;
+      grid-column: 1/last-line;
+      .name-tag {
+        right: 14%;
+        top: 30%;
+      }
+      img {
+        max-height: 75%;
+        height: 75%;
+        margin-left: 5%;
+      }
+    }
+    .patient-3 {
+      grid-row: 5/9;
+      grid-column: 1/4;
+      border-bottom: 1px solid #ddd;
+      img {
+        height: 85%;
+        max-height: 85%;
+        margin-left: 5%;
+        margin-bottom: 5%;
+      }
+      .name-tag {
+        right: 8%;
+        top: 25%;
+        left: unset;
+      }
+    }
+    .patient-4 {
+      grid-row: 9/13;
+      grid-column: 1/4;
+      img {
+        height: 85%;
+        max-height: 85%;
+        margin-bottom: 5%;
+        margin-right: 5%;
+      }
+      .name-tag {
+        top: 30%;
+        left: 10%;
+      }
+    }
+    .patient-5 {
+      grid-row: 13/last-line;
+      grid-column: 1/last-line;
+      img {
+        max-height: 100%;
+        height: 100%;
+        width: initial;
+        max-width: initial;
+        margin-right: 15%;
+      }
+      .name-tag {
+        bottom: 33%;
+        left: 10%;
+      }
+    }
+  }
+  /*** Professional Section ***/
+  .carousel-btn {
+    width: 50px;
+  }
+  .professional-section {
+    margin-top: 4rem;
+    height: 40vh;
+    .profile-inner-wrapper {
+      width: 100%;
+      margin-top: 2rem;
+    }
+    .profile-wrapper {
+      .carousel-btn {
+        &.--prev {
+          left: 0;
+        }
+        &.--next {
+          right: 0;
+        }
+      }
+    }
+  }
+  .profile-slider {
+    width: 200%;
+    .profile {
+      width: calc(25% - 40px);
+    }
+  }
+  .profile {
+    .detail-wrapper {
+      .name {
+        font-size: 14px;
+      }
+      .title {
+        font-size: 12px;
+      }
+    }
+    .hidden-wrapper {
+      .patient {
+        font-size: 2.2rem;
+      }
+      .patient-unit {
+        font-size: 16px;
+      }
+      .patient-more {
+         margin-top: 0;
+      }
+    }
+  }
+  /*** Contact Section ***/
+  .contact-section {
+    height: 70vh;
+    margin-top: 0;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    .contact-wrapper {
+      grid-column: 1/6;
+      grid-row: 1/5;
+    }
+    .contact-bg {
+      grid-column: 2/last-line;
+      grid-row: 1/last-line;
+    }
+  }
+  .contact-wrapper {
+    .contact-box {
+      height: 75%;
+      padding: 15px 20px;
+      .title {
+        margin: 0px 0;
+        font-size: 16px;
+      }
+      .contact-row {
+        margin: 15px 0;
+        .contact-ctrl {
+          font-size: 14px;
+          width: 90%;
+          padding: 4px 11px;
+        }
+        .contact-ctrl::placeholder {
+          font-size: 13px;
+        }
+      }
+      .contact-submit {
+        margin-top: 5px;
+        font-size: 12px;
+        width: 50%;
+        padding: 5px 10px;
+      }
+    }
+  }
+  /*** Social Section ***/
+  .social-section {
+    margin-top: -8rem;
+  }
 }

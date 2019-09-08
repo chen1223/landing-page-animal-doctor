@@ -120,7 +120,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.fragment = fragment;
       this.scrollToView(fragment);
     });
-    // this.setUpProfList();
   }
 
   ngAfterViewInit() {
@@ -134,6 +133,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
     } catch (e) {
     }
   }
+
+  onResize(): void {
+    this.renderAvatar();
+  }
+
+  /**
+   * Hero Section related functions
+   */
 
   // On next
   onNext(): void {
@@ -170,14 +177,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
           (<HTMLDivElement> el).style.transform = `rotateY(${this.currDeg * -1}deg) translateX(60px)`;
           break;
         case 1:
-          (<HTMLDivElement> el).style.transform = `rotateY(${this.currDeg * -1}deg) translateX(80px)`;
+          (<HTMLDivElement> el).style.transform = `rotateY(${this.currDeg * -1}deg) translateX(60px)`;
           (<HTMLDivElement> el).style.right = '30%';
           break;
         case 2:
-          (<HTMLDivElement> el).style.transform = `rotateY(${this.currDeg * -1}deg) translateX(100px)`;
+          (<HTMLDivElement> el).style.transform = `rotateY(${this.currDeg * -1}deg) translateX(60px)`;
           break;
         case 3:
-          (<HTMLDivElement> el).style.transform = `rotateY(${this.currDeg * -1}deg) translateX(100px)`;
+          (<HTMLDivElement> el).style.transform = `rotateY(${this.currDeg * -1}deg) translateX(60px)`;
           break;
       }
     });
